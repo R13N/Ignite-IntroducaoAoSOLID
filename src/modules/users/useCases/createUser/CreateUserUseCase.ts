@@ -13,7 +13,7 @@ class CreateUserUseCase {
     // Complete aqui
     const userAlreadyExists = this.usersRepository.findByEmail(email);
     if (userAlreadyExists) {
-      throw new Error("Email is already used");
+      throw new Error("This email is already in use.");
     }
     const user = this.usersRepository.create({ name, email });
     return user;
